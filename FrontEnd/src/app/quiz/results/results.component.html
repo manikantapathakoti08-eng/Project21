@@ -1,0 +1,31 @@
+<div class="results-container max-w-2xl mx-auto bg-white/90 rounded-3xl shadow-2xl p-8 border border-pink-200 mt-10">
+  <h2 class="text-4xl font-extrabold text-pink-600 mb-6 text-center tracking-tight drop-shadow">{{ quizTitle }} - Results</h2>
+
+  <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+    <span class="inline-block bg-indigo-100 text-indigo-700 rounded-full px-6 py-2 font-bold text-xl shadow">Score: {{ correctCount }}/{{ totalQuestions }} ({{ scorePercent }}%)</span>
+    <span class="inline-block bg-pink-100 text-pink-700 rounded-full px-6 py-2 font-bold text-xl shadow">Status: <span [ngClass]="passed ? 'text-green-600' : 'text-red-600'">{{ passed ? 'Passed' : 'Failed' }}</span></span>
+  </div>
+
+  <h3 class="text-3xl font-bold mb-8 text-indigo-700 tracking-tight">Question Feedback</h3>
+  <div *ngFor="let q of questions; let idx = index" class="mb-10 p-8 rounded-2xl border-2 border-pink-200 bg-white/95 shadow-lg">
+    <div class="font-extrabold text-indigo-800 mb-3 text-lg tracking-wide">{{ idx + 1 }}) {{ q.question }}</div>
+    <div class="mb-2 text-gray-900 text-base pl-2">
+      <span class="font-semibold text-pink-700">Your Answer:</span> <span class="font-medium">{{ q.selected }}</span>
+    </div>
+    <div class="mb-2 text-gray-700 text-base pl-2">
+      <span class="font-semibold text-indigo-700">Correct Answer:</span> <span class="font-medium">{{ q.answer }}</span>
+    </div>
+    <div class="mb-2 text-gray-600 text-base pl-2">
+      <span class="font-semibold">Explanation:</span> <span class="font-medium">{{ q.explanation }}</span>
+    </div>
+    <div class="mb-2 text-base pl-2">
+      <span [ngClass]="q.isCorrect ? 'text-green-600 font-bold' : 'text-red-600 font-bold'">{{ q.isCorrect ? 'Correct' : 'Incorrect' }}</span>
+    </div>
+  </div>
+
+  <div class="actions text-center mt-8">
+    <button routerLink="/quiz" class="bg-gradient-to-r from-indigo-400 to-pink-400 text-white px-6 py-3 rounded-2xl shadow font-bold text-lg hover:from-indigo-500 hover:to-pink-500 transition-all duration-200">
+      Try Again
+    </button>
+  </div>
+</div>

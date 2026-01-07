@@ -1,0 +1,121 @@
+h1, h2, h3, h4 {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #fff 60%, #fce7f3 100%);
+  min-height: 100vh;
+}
+
+.quiz-container {
+  background: rgba(255,255,255,0.95);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1.5px solid #c7d2fe;
+}
+
+.quiz-container form {
+  margin-bottom: 0;
+}
+
+.quiz-container .mb-16 {
+  margin-bottom: 3.5rem !important;
+}
+
+.quiz-container .p-8 {
+  padding: 2rem !important;
+}
+
+.quiz-container .rounded-2xl, .quiz-container .rounded-3xl {
+  border-radius: 1.5rem !important;
+}
+
+.quiz-container .shadow-xl, .quiz-container .shadow-2xl {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15) !important;
+}
+
+.quiz-container label {
+  transition: color 0.2s;
+}
+.quiz-container label:hover {
+  color: #db2777;
+}
+
+.quiz-container input[type="radio"]:focus {
+  outline: 2px solid #db2777;
+  box-shadow: 0 0 0 2px #fce7f3;
+}
+
+.quiz-container button {
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+  background: linear-gradient(90deg, #db2777 0%, #6366f1 100%);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.quiz-container button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #be185d 0%, #3730a3 100%);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.18);
+}
+.quiz-container button:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.quiz-container .feedback-card {
+  background: rgba(236, 233, 254, 0.7);
+  border: 1.5px solid #f9a8d4;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px 0 rgba(219, 39, 119, 0.08);
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+}
+h2 {
+  color: #2c3e50;
+}
+
+h3 {
+  margin-top: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Sky-blue outer shadow wrapper creates an empty shadow area around the inner white card */
+.sky-shadow-outer {
+  border-radius: 1.25rem;
+  border: 2px solid rgba(125,211,252,0.9); /* sky-300-ish */
+  box-shadow: 0 24px 80px 0 rgba(56,189,248,0.16) !important; /* sky-blue soft shadow */
+  background: transparent;
+  padding: 1rem; /* creates empty space between border/shadow and inner card */
+}
+
+/* Inner card: pure white surface with no shadow so the outer shadow appears as empty space */
+.inner-white-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: none !important;
+}

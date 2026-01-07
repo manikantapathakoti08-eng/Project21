@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // 1. BACKEND LAUNCH CONFIGURATION (Starts Spring Boot and enables debugging)
+        {
+            "type": "java",
+            "name": "Launch Spring Boot Backend",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.project69.project.Project21Application",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        // 2. FRONTEND ATTACH CONFIGURATION (Starts Chrome Debugger)
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Frontend Debugger",
+            // *** CHANGE 8001 TO YOUR ACTUAL HTTP-SERVER PORT ***
+            "url": "http://localhost:8001/#/quiz/1", 
+            "webRoot": "${workspaceFolder}/FrontEnd"
+        }
+    ],
+    // 3. COMPOUND CONFIGURATION (Runs the two above simultaneously)
+    "compounds": [
+        {
+            "name": "Full Stack Debug",
+            "configurations": [
+                "Launch Spring Boot Backend",
+                "Launch Frontend Debugger"
+            ],
+            // Ensures both processes stop together when you end the debugging session
+            "stopAll": true 
+        }
+    ]
+}

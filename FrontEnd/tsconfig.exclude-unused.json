@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "src/app/app.config.server.ts",
+    "src/app/app.routes.server.ts",
+    "src/app/app.ts",
+    "src/app/quiz/models.ts",
+    "src/app/quiz/quiz-data.ts"
+  ]
+}

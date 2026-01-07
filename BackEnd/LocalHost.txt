@@ -1,0 +1,7 @@
+https://localhost:8443/question/allQuestions
+https://localhost:8443/quiz/create?noQ=10&title=GeneralKnowledge
+https://localhost:8443/quiz/get/1
+https-server . -p 8003
+https://localhost:8003/
+https://localhost:8443
+live-server --https --port=8003
