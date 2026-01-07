@@ -24,9 +24,15 @@ Project21 is a full-stack quiz application. The backend is implemented with Spri
 ```powershell
 cd BackEnd
 ./mvnw spring-boot:run
-# or: mvn spring-boot:run
+```
 
+### Frontend
+
+```powershell
 cd FrontEnd
 npm install
 npm start
 # or: ng serve --open
+```
+
+
