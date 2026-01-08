@@ -9,8 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface QuizDao extends JpaRepository<Quiz, Integer> {
-
-    // Ensure we always fetch questions with the quiz to avoid lazy loading issues
     @EntityGraph(attributePaths = "questions")
     Optional<Quiz> findById(Integer id);
 }
