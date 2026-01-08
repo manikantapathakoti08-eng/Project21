@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * DTO sent to the client — intentionally does not include the correct answer index.
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
