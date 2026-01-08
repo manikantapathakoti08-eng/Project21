@@ -1,9 +1,6 @@
 package com.project69.project.model;
-
 import lombok.*;
-
 import java.util.List;
-
 @Data
 @Builder
 @NoArgsConstructor
