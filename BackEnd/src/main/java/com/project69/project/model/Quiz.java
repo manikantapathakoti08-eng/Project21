@@ -1,24 +1,16 @@
 package com.project69.project.model;
-
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
-
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Quiz {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String title;
-
-    // ManyToMany between quiz and questions. Remove cascade=ALL because questions are existing DB entities;
-    // cascading remove/persist can cause unwanted behavior.
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "quiz_questions",
