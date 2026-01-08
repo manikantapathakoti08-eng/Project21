@@ -1,13 +1,10 @@
 <div class="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-pink-100 flex items-center justify-center p-4">
     <div class="quiz-container w-full max-w-2xl bg-white shadow-2xl rounded-3xl p-8 md:p-12 border border-indigo-200">
     <h1 class="text-5xl font-extrabold text-indigo-700 mb-12 text-center tracking-tight drop-shadow">Quiz Application</h1>
-
         <div *ngIf="isLoading" class="text-center p-9 text-indigo-500">Loading quiz...</div>
         <div *ngIf="errorMessage" class="text-red-600 bg-red-100 border border-red-300 p-4 rounded-lg mb-6">
             {{ errorMessage }}
         </div>
-
-        <!-- Small helper to load a quiz id manually when none provided in the URL -->
         <div *ngIf="!isLoading && !idProvided && !result && questions.length === 0" class="mb-6">
             <p class="text-gray-700 mb-2">Enter a quiz id to load a quiz (example: 8):</p>
             <div class="flex gap-2 items-center">
@@ -15,8 +12,6 @@
                 <button (click)="loadByInput()" class="px-4 py-2 bg-indigo-600 text-white rounded-md">Load</button>
             </div>
         </div>
-
-        <!-- Quiz Form Section -->
         <form *ngIf="!isLoading && questions.length > 0 && !result">
             <!-- Loop over each Question object -->
             <div *ngFor="let question of questions; let qIdx = index" class="mb-20 max-w-md mx-auto">
