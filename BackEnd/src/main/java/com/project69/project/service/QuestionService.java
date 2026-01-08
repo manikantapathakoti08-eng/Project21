@@ -1,5 +1,4 @@
 package com.project69.project.service;
-
 import com.project69.project.dao.QuestionDao;
 import com.project69.project.model.C_BASIC;
 import org.slf4j.Logger;
@@ -12,29 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
-/**
- * Service for managing C_BASIC questions.
- *
- * Notes:
- * - Methods return ResponseEntity to be compatible with your current controllers.
- * - Prefer moving HTTP concerns to controllers and returning domain objects/DTOs from services
- *   in the medium/long term.
- */
 @Service
 public class QuestionService {
-
     private static final Logger log = LoggerFactory.getLogger(QuestionService.class);
-
     private final QuestionDao questionDao;
-
     public QuestionService(QuestionDao questionDao) {
         this.questionDao = questionDao;
     }
-
-    /**
-     * Get all questions. Marked readOnly to optimize transaction handling.
-     */
     @Transactional(readOnly = true)
     public ResponseEntity<List<C_BASIC>> getAllQuestions() {
         try {
@@ -48,10 +31,6 @@ public class QuestionService {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Collections.emptyList());
         }
     }
-
-    /**
-     * Get a single question by ID.
-     */
     @Transactional(readOnly = true)
     public ResponseEntity<C_BASIC> getQuestionById(Integer id) {
         if (id == null) {
@@ -66,11 +45,6 @@ public class QuestionService {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
-    /**
-     * Save a new question (or update an existing one).
-     * Marked transactional since it modifies data.
-     */
     @Transactional
     public ResponseEntity<C_BASIC> saveQuestion(C_BASIC question) {
         if (question == null) {
@@ -84,10 +58,6 @@ public class QuestionService {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
-    /**
-     * Delete a question by id.
-     */
     @Transactional
     public ResponseEntity<Void> deleteQuestion(Integer id) {
         if (id == null) {
